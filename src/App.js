@@ -1,11 +1,11 @@
 import React from 'react'
+import Header from './components/Header'
 
-function App() {
+export function App() {
     return (
-        <div>
-            <h3>Hello World!</h3>
-        </div>
-    )
+      <div>
+        <Header />
+        <h3>Hello World!</h3>
+      </div>
+    );
 }
-
-export default App
