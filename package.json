@@ -1,5 +1,5 @@
 {
-  "name": "movie-cards",
+  "name": "movie-finder",
   "version": "1.0.0",
   "description": "a simple app displaying mmovies from a movies API",
   "main": "index.js",
