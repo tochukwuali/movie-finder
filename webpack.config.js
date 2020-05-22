@@ -37,16 +37,16 @@ module.exports = {
     }),
     new HtmlWebpackPlugin({
       template: path.resolve(__dirname, "src", "index.html")
-    }),
-    new CopyWebpackPlugin({
-      patterns: [
-        {
-        context: "./src/images",
-        from: "**/*",
-        to: "./images"
-      }
-      ]
     })
+    // new CopyWebpackPlugin({
+    //   patterns: [
+    //     {
+    //     context: "./src/images",
+    //     from: "**/*",
+    //     to: "./images"
+    //   }
+    //   ]
+    // })
   ],
   devServer: {
     contentBase: "./dist",

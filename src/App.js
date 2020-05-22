@@ -22,25 +22,31 @@ export function App() {
         ...prevState, search: search
       }
     })
-
-    console.log(state.search)
   }
 
   const handleSearch = (e) => {
     if (e.key === "Enter" ) {
-      axios(apiURL + '&s' + state.search).then((data) => {
-        console.log(data)
-      })
+      
+      axios(apiURL + "&s=" + state.search).then(( {data} ) => {
+        let results = data.Search
+
+        setState(prevState => {
+          return {
+            ...prevState,
+            results: results
+          };
+        });
+      });
     } 
   }
-
+  const apiKEY = 'https://api.themoviedb.org/3/search/movie?api_key=514cbf896997aa1cae73eed55b090405&language=en-US'
   const apiURL = 'http://www.omdbapi.com/?i=tt3896198&apikey=e55f172a'
     return (
       <div className="container">
         <Header />
         <main>
-          <SearchBar handleInput = {handleInput}/>
-          {/* <Movies />  */}
+          <SearchBar handleInput = {handleInput} handleSearch={handleSearch}/>
+          <Movies results = {state.results}/>
         </main>
       </div>
     );  

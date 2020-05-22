@@ -3,21 +3,20 @@ import React from 'react'
 export const MovieItem = ({movie}) => {
     return (
       <div className="movie-card">
-        <div className="card movie-card" style={{ width: "18rem" }}>
-        <img src={movie.imgUrl} className="card-img-top" alt="..." />
-        <div className="card-body">
-          <p>{movie.year}</p> <hr />
-          <h5 className="card-title">{movie.title}</h5> 
-          <p className="card-text">{movie.subtitle}</p>
-          {/* <a href="#" className="btn btn-primary">
+        <div className="card" style={{ width: "18rem" }}>
+          <img
+            // src={`https://image.tmdb.org/t/p/w185${movie.poster_path}`}
+            src={movie.Poster}
+            className="card-img-top"
+            alt="..."
+          />
+          <div className="card-body">
+            <h5 className="card-title">{movie.Title}</h5>
+            {/* <a href="#" className="btn btn-primary">
             Go somewhere
-          </a> */}   
-        </div>
-        <div className="card-footer">
-            <small className="text-muted">Rating: {movie.rating}</small>
+          </a> */}
           </div>
+        </div>
       </div>
-    </div>
-      
     );
 }

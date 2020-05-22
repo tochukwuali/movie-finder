@@ -1,13 +1,12 @@
 import React from 'react'
 import { MovieItem } from './MovieItem';
-import {state} from '../../movies'
 
-export const Movies = () => {
+export const Movies = ({results}) => {
   
     return (
       <div className="card-deck">
-        {state.movies.map(movie => (
-          <MovieItem key={movie.id} movie={movie} />
+        {results.map((movie, i) => (
+          <MovieItem key={i}movie={movie} />
         ))}
       </div>
     );
