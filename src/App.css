@@ -1,5 +1,14 @@
 header {
     text-align: center;
+    margin: 10px
+}
+
+input {
+    text-align: center
+}
+
+.search-container {
+    margin: 10px;
 }
 
 .search {
@@ -15,7 +24,7 @@ header {
     transition: 0.3s ease-out;
     font-size: 16px;
     font-weight: 300px;
-    margin: 10px;
+    margin: 5px;
 }
 
 .search:focus {
@@ -23,5 +32,35 @@ header {
 }
 
 .movie-card {
-    margin: 10px
+    margin: 10px;
+}
+
+.card {
+    cursor: pointer;
+}
+
+.details {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: #fff
+}
+
+.details.content {
+    display: block;
+    width: 100%;
+    margin: 0 auto;
+    padding: 25px;
+
+}
+
+.details .content h2{
+    font-size: 28px;
+    font-weight: 28px;
+}
+
+.details .content .rating {
+    margin-bottom: 30px;
 }
