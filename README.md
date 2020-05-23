@@ -3,7 +3,7 @@
 Search for your favourite movies and have them displayed nicely for you 
 
 ## Built with
-- Nodejs
+- ([Nodejs](https://nodejs.org/en/docs/)) - a JavaScript runtime
 - React
 - Webpack
 - Babel
