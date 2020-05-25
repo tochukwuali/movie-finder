@@ -13,7 +13,7 @@ const Details = ({selected, closeDetails}) => {
             <div className="col-5">
               <h2>{selected.Title}</h2>
               <p>{selected.Year}</p>
-              <p>Rating: {selected.imdbRating}</p>
+              <p> IMDB Rating: {selected.imdbRating}</p>
               <div className="overview">{selected.Plot}</div>
             </div>
           </div>
