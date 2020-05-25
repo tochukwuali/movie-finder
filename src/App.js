@@ -35,10 +35,10 @@ export function App() {
     let error = ''
 
     if(!state.search) {
-      error = 'name cannot be blank'
+      error = 'Name cannot be blank'
     }
     if (error) {
-      setError(error)
+      setError(error) 
       return false
     }
     return true
@@ -59,6 +59,7 @@ export function App() {
             results: results
           };
         });
+        setError('')
       });  
     }    
   }
