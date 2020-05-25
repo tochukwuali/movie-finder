@@ -11,15 +11,30 @@ input {
     margin: 10px;
 }
 
+.send {
+    padding: 10px;
+    margin-bottom: 10px;
+    border: none;
+    background: none;
+}
+
+.icon-send{
+    font-size: 2rem;
+}
+
+button:focus {
+    outline: none;
+}
+
 .search {
     display: block;
     width: 100%;
     border: none;
+    border-bottom: 2px  solid #756969;
     background: none;
     padding: 12px;
-    border-radius: 7px;
-    background-color: #0a0a0a;
-    color: #f6f7f1;
+    border-radius: px;
+    color: #756969;
     outline: none;
     transition: 0.3s ease-out;
     font-size: 16px;
@@ -28,7 +43,7 @@ input {
 }
 
 .search:focus {
-    box-shadow: 0px 0px 3px 3px #f38e8e
+    /* box-shadow: 0px 0px 1px 1px #756969;  */
 }
 
 .movie-card {
@@ -47,15 +62,6 @@ input {
     height: 100vh;
     background: #fff
 }
-
-.details.content {
-    display: block;
-    width: 100%;
-    margin: 0 auto;
-    padding: 25px;
-
-}
-
 .details .content h2{
     font-size: 28px;
     font-weight: 28px;

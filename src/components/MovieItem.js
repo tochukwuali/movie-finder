@@ -1,9 +1,7 @@
 import React from 'react'
 
 export const MovieItem = ({movie, openDetails}) => {
-    if (movie.Poster === 'N/A') {
-
-    }
+  
     return (
       <div className="movie-card" onClick={() => openDetails(movie.imdbID)}>
         <div className="card" style={{ width: "18rem" }}>
