@@ -18,9 +18,6 @@ export function App() {
   const [state, setState] = useState(initialState)
   const [error, setError] = useState('')
   
-  const apiKEY = 'https://api.themoviedb.org/3/search/movie?api_key=514cbf896997aa1cae73eed55b090405&language=en-US'
-  const apiURL = 'http://www.omdbapi.com/?apikey=e55f172a'
-
   const handleInput = (e) => {
     let search = e.target.value
 
@@ -50,33 +47,33 @@ export function App() {
     const isValid = validate()
 
     if (isValid) {
-      axios(apiURL + "&s=" + state.search).then(({ data }) => {
+      axios(REACT_APP_KEY + "&s=" + state.search).then(({ data }) => {
         let results = data.Search;
-        console.log(results)
+        console.log(results);
         setState(prevState => {
           return {
             ...prevState,
             results: results
           };
         });
-        setError('')
+        setError("");
       });  
     }    
   }
 
   const openDetails = id => {
-    axios(apiURL + "&i=" + id).then(({ data }) => {
+    axios(process.env.REACT_APP_KEY + "&i=" + id).then(({ data }) => {
       let result = data;
 
-      console.log(result)
+      console.log(result);
 
       setState(prevState => {
         return {
           ...prevState,
           selected: result
-        }
-      })
-    })
+        };
+      });
+    });
   }
 
   const closeDetails = () => {
