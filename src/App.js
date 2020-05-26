@@ -4,7 +4,7 @@ import axios from 'axios'
 
 import Header from './components/Header'
 import SearchBar from './components/SearchBar'
-import { Movies } from './components/Movies'
+import Movies from './components/Movies'
 import Details from './components/Details'
 import NotFound from './components/NotFound'
 

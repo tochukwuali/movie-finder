@@ -1,7 +1,7 @@
 import React from 'react'
 import { MovieItem } from './MovieItem';
 
-export const Movies = ({results, openDetails}) => {
+const Movies = ({results, openDetails}) => {
   
     return (
       <div className="card-deck">
@@ -11,3 +11,5 @@ export const Movies = ({results, openDetails}) => {
       </div>
     );
 }
+
+export default Movies
