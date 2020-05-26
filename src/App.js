@@ -47,9 +47,8 @@ export function App() {
     const isValid = validate()
 
     if (isValid) {
-      axios(REACT_APP_KEY + "&s=" + state.search).then(({ data }) => {
+      axios(process.env.apiKey + "&s=" + state.search).then(({ data }) => {
         let results = data.Search;
-        console.log(results);
         setState(prevState => {
           return {
             ...prevState,
@@ -62,7 +61,7 @@ export function App() {
   }
 
   const openDetails = id => {
-    axios(process.env.REACT_APP_KEY + "&i=" + id).then(({ data }) => {
+    axios(process.env.apiKey + "&i=" + id).then(({ data }) => {
       let result = data;
 
       console.log(result);

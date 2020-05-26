@@ -1,14 +1,15 @@
 const path = require("path");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
-const CopyWebpackPlugin = require("copy-webpack-plugin");
+const dotenv = require('dotenv').config({path: __dirname + '/.env'})
+const webpack = require('webpack')
 
 module.exports = {
-  mode: "development",
-  entry: path.resolve(__dirname, "./src/index.js"),
-  output: {
-    filename: "bundle.js",
-    path: path.resolve(__dirname, "dist"),
+     mode: "development",
+     entry: path.resolve(__dirname, "./src/index.js"),
+     output: {
+     filename: "bundle.js",
+     path: path.resolve(__dirname, "dist"),
     publicPath: "/"
   },
   module: {
@@ -37,20 +38,15 @@ module.exports = {
     }),
     new HtmlWebpackPlugin({
       template: path.resolve(__dirname, "src", "index.html")
+    }),
+    new webpack.DefinePlugin({
+      "process.env": JSON.stringify((dotenv.parsed))
     })
-    // new CopyWebpackPlugin({
-    //   patterns: [
-    //     {
-    //     context: "./src/images",
-    //     from: "**/*",
-    //     to: "./images"
-    //   }
-    //   ]
-    // })
   ],
   devServer: {
     contentBase: "./dist",
     hot: true,
     historyApiFallback: true
   }
+  
 };

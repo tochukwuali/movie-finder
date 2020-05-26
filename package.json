@@ -6,13 +6,15 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "webpack",
-    "dev": "webpack-dev-server --open --hot --mode development",
-    "build": "webpack --config webpack.config.js --mode production"
+    "dev": "webpack-dev-server --open --hot --mode=development",
+    "build-webpack": "webpack --config webpack.config.js --mode=production",
+    "serve-prod": "serve dist"
   },
   "author": "Tochukwu",
   "license": "ISC",
   "dependencies": {
     "axios": "^0.19.2",
+    "dotenv": "^8.2.0",
     "react": "^16.13.1",
     "react-dom": "^16.13.1"
   },
