@@ -5,11 +5,11 @@ const dotenv = require('dotenv').config({path: __dirname + '/.env'})
 const webpack = require('webpack')
 
 module.exports = {
-     mode: "development",
-     entry: path.resolve(__dirname, "./src/index.js"),
-     output: {
-     filename: "bundle.js",
-     path: path.resolve(__dirname, "dist"),
+  mode: "production",
+  entry: path.resolve(__dirname, "./src/index.js"),
+  output: {
+    filename: "bundle.js",
+    path: path.resolve(__dirname, "build"),
     publicPath: "/"
   },
   module: {
@@ -22,11 +22,6 @@ module.exports = {
       {
         test: /\.css$/,
         use: ["style-loader", MiniCssExtractPlugin.loader, "css-loader"]
-      },
-      {
-        test: /\.svg$/,
-        loader: "url-loader",
-        exclude: /node_modules/
       }
     ]
   },
@@ -40,13 +35,12 @@ module.exports = {
       template: path.resolve(__dirname, "src", "index.html")
     }),
     new webpack.DefinePlugin({
-      "process.env": JSON.stringify((dotenv.parsed))
+      "process.env": JSON.stringify(dotenv.parsed)
     })
   ],
   devServer: {
-    contentBase: "./dist",
+    contentBase: "./build",
     hot: true,
     historyApiFallback: true
   }
-  
 };
