@@ -15,6 +15,8 @@ export function App() {
     selected: {},
   }
 
+  const apiKey = "http://www.omdbapi.com/?apikey=e55f172a";
+
   const [state, setState] = useState(initialState)
   const [error, setError] = useState('')
   
@@ -47,7 +49,7 @@ export function App() {
     const isValid = validate()
 
     if (isValid) {
-      axios(process.env.apiKey + "&s=" + state.search).then(({ data }) => {
+      axios(apiKey + "&s=" + state.search).then(({ data }) => {
         let results = data.Search;
         setState(prevState => {
           return {
@@ -61,7 +63,7 @@ export function App() {
   }
 
   const openDetails = id => {
-    axios(process.env.apiKey + "&i=" + id).then(({ data }) => {
+    axios(apiKey + "&i=" + id).then(({ data }) => {
       let result = data;
 
       console.log(result);
