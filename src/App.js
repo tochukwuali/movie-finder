@@ -15,7 +15,7 @@ export function App() {
     selected: {},
   }
 
-  const apiKey = "http://www.omdbapi.com/?apikey=e55f172a";
+  const apiKey = "https://www.omdbapi.com/?apikey=e55f172a";
 
   const [state, setState] = useState(initialState)
   const [error, setError] = useState('')
